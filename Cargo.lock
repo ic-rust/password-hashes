@@ -10,7 +10,7 @@ dependencies = [
  "blake2",
  "cpufeatures",
  "hex-literal",
- "password-hash",
+ "password-hash 0.5.0",
  "zeroize",
 ]
 
@@ -27,7 +27,7 @@ dependencies = [
  "crypto-bigint",
  "digest",
  "hex-literal",
- "password-hash",
+ "password-hash 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "rayon",
  "sha2",
  "zeroize",
@@ -208,6 +208,15 @@ dependencies = [
 [[package]]
 name = "getrandom"
 version = "0.2.10"
+dependencies = [
+ "cfg-if",
+ "libc",
+ "wasi",
+]
+
+[[package]]
+name = "getrandom"
+version = "0.2.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "be4136b2a15dd319360be1c07d9933517ccf0be8f16bf62a3bee4f0d618df427"
 dependencies = [
@@ -302,11 +311,20 @@ name = "password-auth"
 version = "0.3.0"
 dependencies = [
  "argon2",
- "getrandom",
- "password-hash",
+ "getrandom 0.2.10 (registry+https://github.com/rust-lang/crates.io-index)",
+ "password-hash 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "pbkdf2",
- "rand_core",
+ "rand_core 0.6.4 (registry+https://github.com/rust-lang/crates.io-index)",
  "scrypt",
+]
+
+[[package]]
+name = "password-hash"
+version = "0.5.0"
+dependencies = [
+ "base64ct",
+ "rand_core 0.6.4",
+ "subtle",
 ]
 
 [[package]]
@@ -316,7 +334,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "346f04948ba92c43e8469c1ee6736c7563d71012b17d40745260fe106aac2166"
 dependencies = [
  "base64ct",
- "rand_core",
+ "rand_core 0.6.4 (registry+https://github.com/rust-lang/crates.io-index)",
  "subtle",
 ]
 
@@ -327,7 +345,7 @@ dependencies = [
  "digest",
  "hex-literal",
  "hmac",
- "password-hash",
+ "password-hash 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "rayon",
  "sha1",
  "sha2",
@@ -366,7 +384,7 @@ checksum = "34af8d1a0e25924bc5b7c43c079c942339d8f0a8b57c39049bef581b46327404"
 dependencies = [
  "libc",
  "rand_chacha",
- "rand_core",
+ "rand_core 0.6.4 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -376,7 +394,14 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e6c10a63a0fa32252be49d21e7709d4d4baf8d231c2dbce1eaa8141b9b127d88"
 dependencies = [
  "ppv-lite86",
- "rand_core",
+ "rand_core 0.6.4 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "rand_core"
+version = "0.6.4"
+dependencies = [
+ "getrandom 0.2.10",
 ]
 
 [[package]]
@@ -385,7 +410,7 @@ version = "0.6.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ec0be4795e2f6a28069bec0b5ff3e2ac9bafc99e6a9a7dc3547996c5c816922c"
 dependencies = [
- "getrandom",
+ "getrandom 0.2.10 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -429,7 +454,7 @@ checksum = "d29ab0c6d3fc0ee92fe66e2d99f700eab17a8d57d1c1d3b748380fb20baa78cd"
 name = "scrypt"
 version = "0.11.0"
 dependencies = [
- "password-hash",
+ "password-hash 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "pbkdf2",
  "salsa20",
  "sha2",
